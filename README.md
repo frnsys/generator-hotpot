@@ -1,5 +1,4 @@
 # Generator-hotpot
-[![Build Status](https://secure.travis-ci.org/ftzeng/generator-hotpot.png?branch=master)](https://travis-ci.org/ftzeng/generator-hotpot)
 
 A generator for Yeoman.
 
