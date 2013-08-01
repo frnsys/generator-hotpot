@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 
-	// Configuration
-	// =======================================
 	grunt.initConfig({
+
+        /*== Development ================================================*/
 
 		// Server
 		connect: {
@@ -15,10 +15,6 @@ module.exports = function(grunt) {
 
 		// Watch
 		watch: {
-            bower: {
-                files: ['scripts/vendor/bower/**/*'],
-                tasks: ['bower']
-            }
             // Setup a LiveReload server.
             options: { livereload: true },
 			files: [
@@ -28,11 +24,12 @@ module.exports = function(grunt) {
 				'styles/**/*.sass',
 				'**/*.jade',
 				'source/icons/*',
+                'assets/**/*',
 
                 // Ignore:
                 '!styles/exts/_icons.scss'
 			],
-			tasks: ['sass', 'jade', 'fontcustom', 'jshint']
+			tasks: ['sass', 'jade', 'fontcustom']
 		},
 
 		// Compile SASS/SCSS
@@ -56,15 +53,20 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '.',
-                    src: '**/*.jade',
-                    dest: '.'
+                    src: [
+                        '**/*.jade',
+                        '!includes/**/*.jade',
+                        '!node_modules/**/*.jade'
+                    ],
+                    dest: '.',
+                    ext: '.html'
                 }]
 			}
 		},
 
         bower: {
             main: {
-                rjsConfig: 'app/config.js'
+                rjsConfig: 'scripts/config.js'
             }
         },
 
@@ -73,7 +75,10 @@ module.exports = function(grunt) {
             options: {
                 jshintrc: '.jshintrc'
             },
-            files: ['scripts/**/*.js']
+            files: [
+                'scripts/**/*.js',
+                '!scripts/vendor/**/*.js'
+            ]
         },
 
         csslint: {
@@ -95,10 +100,10 @@ module.exports = function(grunt) {
             // Copy Font Custom fonts to proper place.
 			fontcustom: {
 				files: [
-					{src: ['source/icons/fontcustom/*.woff'], dest: 'app/styles/fonts/icons.woff'},
-					{src: ['source/icons/fontcustom/*.eot'],  dest: 'app/styles/fonts/icons.eot'},
-					{src: ['source/icons/fontcustom/*.svg'],  dest: 'app/styles/fonts/icons.svg'},
-					{src: ['source/icons/fontcustom/*.ttf'],  dest: 'app/styles/fonts/icons.ttf'}
+					{src: ['source/icons/fontcustom/*.woff'], dest: 'styles/fonts/icons.woff'},
+					{src: ['source/icons/fontcustom/*.eot'],  dest: 'styles/fonts/icons.eot'},
+					{src: ['source/icons/fontcustom/*.svg'],  dest: 'styles/fonts/icons.svg'},
+					{src: ['source/icons/fontcustom/*.ttf'],  dest: 'styles/fonts/icons.ttf'}
 				]
 			}
 		},
@@ -139,9 +144,14 @@ module.exports = function(grunt) {
 
         // Minify CSS.
         cssmin: {
-            report: 'gzip',
+            options: {
+                report: 'gzip'
+            },
             files: {
-                'release/app/index.css': ['dev/app/index.css']
+                expand: true,
+                cwd: '.',
+                src: ['styles/index.css'],
+                dest: 'release/'
             }
         },
 
@@ -167,7 +177,7 @@ module.exports = function(grunt) {
 	// =======================================
 	grunt.registerTask('default', ['connect', 'watch']);
 	grunt.registerTask('fontcustom', ['shell:fontcustom', 'copy:fontcustom', 'replace:fontcustom']);
-    grunt.registerTask('build', ['clean', 'cssmin', 'imagemin', 'requirejs']);
+    grunt.registerTask('release', ['jshint', 'csslint', 'clean', 'cssmin', 'imagemin', 'requirejs']);
 
 	// Load grunt packages
 	// =======================================
@@ -179,6 +189,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-bower-requirejs');
     grunt.loadNpmTasks('grunt-requirejs');
 	grunt.loadNpmTasks('grunt-text-replace');
