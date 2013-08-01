@@ -18,7 +18,9 @@
     "devel": true,
     "globals": {
         "jQuery": true,
+        "$": true,
         "requirejs": true,
-        "require": true
+        "require": true,
+        "define": true
     }
 }
