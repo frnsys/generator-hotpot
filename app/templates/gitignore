@@ -4,5 +4,5 @@ node_modules/
 .gitkeep
 fontcustom
 index.css
-app/vendor/bower/**/*
 *.swp
+scripts/vendor/bower/**/*
