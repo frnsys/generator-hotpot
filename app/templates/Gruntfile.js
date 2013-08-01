@@ -176,6 +176,7 @@ module.exports = function(grunt) {
 	// Define grunt tasks
 	// =======================================
 	grunt.registerTask('default', ['connect', 'watch']);
+	grunt.registerTask('init', ['sass', 'jade', 'default']);
 	grunt.registerTask('fontcustom', ['shell:fontcustom', 'copy:fontcustom', 'replace:fontcustom']);
     grunt.registerTask('release', ['jshint', 'csslint', 'clean', 'cssmin', 'imagemin', 'requirejs']);
 

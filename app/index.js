@@ -20,7 +20,7 @@ HotpotGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   // have Yeoman greet the user.
-  console.log(this.yeoman);
+  console.log(hotpot);
 
   var prompts = [{
     type: 'input',
@@ -67,4 +67,15 @@ HotpotGenerator.prototype.stylesheets = function stylesheets() {
         cb();
     });
 };
+
+var hotpot =
+'\n\t    )    )        (       )             '.red+
+'\n\t( /( ( /(   *   ))\\ ) ( /(   *   )     '.red+
+'\n\t )\\()))\\())` )  /(()/( )\\())` )  /(  '.red+
+'\n\t((_)\\((_)\\  ( )(_))(_)|(_)\\  ( )(_)) '.red+
+'\n\t _((_) ((_)(_(_()|_))   ((_)(_(_())     '.red+
+'\n\t| || |/ _ \\|_   _| _ \\ / _ \\|_   _|  '.yellow+
+'\n\t| __ | (_) | | | |  _/| (_) | | |       '.yellow+
+'\n\t|_||_|\\___/  |_| |_|   \\___/  |_|     '.yellow+
+'\n\n\t       [A Yeoman generator]\n\n';
 
