@@ -1,55 +1,55 @@
 module.exports = function(grunt) {
 
-	grunt.initConfig({
+    grunt.initConfig({
 
         /*== Development ================================================*/
 
-		// Server
-		connect: {
-			server: {
-				options: {
-					port: 8989
-				}
-			}
-		},
+        // Server
+        connect: {
+            server: {
+                options: {
+                    port: 8989
+                }
+            }
+        },
 
-		// Watch
-		watch: {
+        // Watch
+        watch: {
             // Setup a LiveReload server.
             options: { livereload: true },
-			files: [
-				'scripts/vendor/libs/**/*',
-				'scripts/**/*.js',
-				'styles/**/*.scss',
-				'styles/**/*.sass',
-				'**/*.jade',
-				'source/icons/*',
+            files: [
+                'scripts/vendor/libs/**/*',
+                'scripts/**/*.js',
+                'styles/**/*.scss',
+                'styles/**/*.sass',
+                '**/*.jade',
+                'source/icons/*',
                 'assets/**/*',
 
                 // Ignore:
                 '!styles/exts/_icons.scss'
-			],
-			tasks: ['sass', 'jade', 'fontcustom']
-		},
+            ],
+            tasks: ['sass', 'jade', 'fontcustom']
+        },
 
-		// Compile SASS/SCSS
-		// Since all other stylesheets are @import-ed in index.scss,
-		// that's the only one we need to compile.
-		sass: {
-			app: {
-				files: {
-					'styles/index.css': 'styles/index.sass'	
-				}
-			}
-		},
+        // Compile SASS/SCSS
+        // Since all other stylesheets are @import-ed in index.scss,
+        // that's the only one we need to compile.
+        sass: {
+            app: {
+                files: {
+                    'styles/index.css': 'styles/index.sass' 
+                }
+            }
+        },
 
-		// Compile Jade templates.
-		jade: {
-			compile: {
-				options: {
-					pretty: true,
-					client: false
-				},
+        // Compile Jade templates.
+        jade: {
+            compile: {
+                options: {
+                    pretty: true,
+                    client: false
+                },
                 files: [{
                     expand: true,
                     cwd: '.',
@@ -61,8 +61,8 @@ module.exports = function(grunt) {
                     dest: '.',
                     ext: '.html'
                 }]
-			}
-		},
+            }
+        },
 
         bower: {
             main: {
@@ -90,22 +90,22 @@ module.exports = function(grunt) {
             }
         },
 
-		shell: {
+        shell: {
             // Compile Font Custom font.
-			fontcustom: {
-				command: 'fontcustom compile source/icons'
-			}
-		},
-		copy: {
+            fontcustom: {
+                command: 'fontcustom compile source/icons'
+            }
+        },
+        copy: {
             // Copy Font Custom fonts to proper place.
-			fontcustom: {
-				files: [
-					{src: ['source/icons/fontcustom/*.woff'], dest: 'styles/fonts/icons.woff'},
-					{src: ['source/icons/fontcustom/*.eot'],  dest: 'styles/fonts/icons.eot'},
-					{src: ['source/icons/fontcustom/*.svg'],  dest: 'styles/fonts/icons.svg'},
-					{src: ['source/icons/fontcustom/*.ttf'],  dest: 'styles/fonts/icons.ttf'}
-				]
-			},
+            fontcustom: {
+                files: [
+                    {src: ['source/icons/fontcustom/*.woff'], dest: 'styles/fonts/icons.woff'},
+                    {src: ['source/icons/fontcustom/*.eot'],  dest: 'styles/fonts/icons.eot'},
+                    {src: ['source/icons/fontcustom/*.svg'],  dest: 'styles/fonts/icons.svg'},
+                    {src: ['source/icons/fontcustom/*.ttf'],  dest: 'styles/fonts/icons.ttf'}
+                ]
+            },
 
             // Copy over files for release.
             release: {
@@ -123,20 +123,20 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-		},
-		replace: {
+        },
+        replace: {
             // Replace Font Custom CSS.
-			fontcustom: {
-				src: ['source/icons/fontcustom/fontcustom.css'],
-				dest: ['styles/exts/_icons.scss'],
-				replacements: [{
-					from: /fontcustom_[^.]+/g,
-					to: 'fonts/icons'
-				}, {
-					from: 'fontcustom',
-					to: 'icons'
-				}]
-			},
+            fontcustom: {
+                src: ['source/icons/fontcustom/fontcustom.css'],
+                dest: ['styles/exts/_icons.scss'],
+                replacements: [{
+                    from: /fontcustom_[^.]+/g,
+                    to: 'fonts/icons'
+                }, {
+                    from: 'fontcustom',
+                    to: 'icons'
+                }]
+            },
 
             // Replace for release.
             release: {
@@ -150,7 +150,7 @@ module.exports = function(grunt) {
                     to: ''
                 }]
             }
-		},
+        },
 
 
         /*== Release ================================================*/
@@ -217,29 +217,29 @@ module.exports = function(grunt) {
              }
          }
 
-	});
+    });
 
-	// Define grunt tasks
-	// =======================================
-	grunt.registerTask('default', ['sass', 'jade', 'connect', 'watch']);
-	grunt.registerTask('fontcustom', ['shell:fontcustom', 'copy:fontcustom', 'replace:fontcustom']);
+    // Define grunt tasks
+    // =======================================
+    grunt.registerTask('default', ['sass', 'jade', 'connect', 'watch']);
+    grunt.registerTask('fontcustom', ['shell:fontcustom', 'copy:fontcustom', 'replace:fontcustom']);
     grunt.registerTask('release', ['jshint', 'csslint', 'clean:release', 'replace:release', 'copy:release', 'cssmin', 'imagemin', 'requirejs', 'clean:cleanup']);
 
-	// Load grunt packages
-	// =======================================
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-jade');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
+    // Load grunt packages
+    // =======================================
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-bower-requirejs');
     grunt.loadNpmTasks('grunt-requirejs');
-	grunt.loadNpmTasks('grunt-text-replace');
-	grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-shell');
 
 };
