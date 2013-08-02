@@ -144,7 +144,7 @@ module.exports = function(grunt) {
                 dest: ['release/index.html'],
                 replacements: [{
                     from: '/scripts/vendor/bower/requirejs/require.js',
-                    to: '/scripts/release.js'
+                    to: 'scripts/release.js'
                 }, {
                     from: ' data-main="/scripts/main"',
                     to: ''
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 	// =======================================
 	grunt.registerTask('default', ['sass', 'jade', 'connect', 'watch']);
 	grunt.registerTask('fontcustom', ['shell:fontcustom', 'copy:fontcustom', 'replace:fontcustom']);
-    grunt.registerTask('release', ['jshint', 'csslint', 'clean', 'cssmin', 'imagemin', 'requirejs']);
+    grunt.registerTask('release', ['jshint', 'csslint', 'clean', 'replace:release', 'copy:release', 'cssmin', 'imagemin', 'requirejs']);
 
 	// Load grunt packages
 	// =======================================
