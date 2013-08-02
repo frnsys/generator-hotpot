@@ -1,7 +1,9 @@
 requirejs.config({
-    baseUrl: 'js/vendor',
+    baseUrl: 'scripts/vendor',
     paths: {
-        jquery: 'vendor/bower/jquery/jquery'
+        jquery: 'vendor/bower/jquery/jquery',
+        modernizr: 'vendor/bower/modernizr/modernizr',
+        requirejs: 'vendor/bower/requirejs/require'
     },
     shim: {
         // Example
