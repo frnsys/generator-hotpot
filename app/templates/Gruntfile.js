@@ -105,7 +105,24 @@ module.exports = function(grunt) {
 					{src: ['source/icons/fontcustom/*.svg'],  dest: 'styles/fonts/icons.svg'},
 					{src: ['source/icons/fontcustom/*.ttf'],  dest: 'styles/fonts/icons.ttf'}
 				]
-			}
+			},
+
+            // Copy over files for release.
+            release: {
+                files: [
+                    {
+                        src: [
+                            '.htaccess',
+                            'favicon.ico',
+                            '404.html',
+                            'crossdomain.xml',
+                            'humans.txt',
+                            'robots.txt'
+                        ],
+                        dest: 'release/'
+                    }
+                ]
+            }
 		},
 		replace: {
             // Replace Font Custom CSS.
