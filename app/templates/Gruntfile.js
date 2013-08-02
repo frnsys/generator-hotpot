@@ -144,7 +144,7 @@ module.exports = function(grunt) {
                 dest: ['release/index.html'],
                 replacements: [{
                     from: '/scripts/vendor/bower/requirejs/require.js',
-                    to: 'scripts/release.js'
+                    to: 'scripts/main.js'
                 }, {
                     from: ' data-main="/scripts/main"',
                     to: ''
@@ -157,17 +157,33 @@ module.exports = function(grunt) {
 
         // Clean out the release directory
         // to remove old files.
-        clean: ['release/'],
+        clean: {
+            release: ['release/'],
+            cleanup: ['release/scripts/vendor']
+        },
 
         // Optimize RequireJS scripts.
         requirejs: {
             compile: {
                 options: {
                     almond: true,                       // Use Almond instead of RequireJS.
+                    appDir: 'scripts',
                     mainConfigFile: 'scripts/config.js',
-                    baseUrl: 'scripts',
-                    out: 'release/scripts/release.js',
-                    name: 'config'
+                    dir: 'release/scripts',
+                    baseUrl: '../scripts',
+                    modules: [
+                        {
+                            // Module names are relative to baseUrl.
+                            name: 'config',
+                            include: ['jquery',
+                                      'modernizr'
+                            ]
+                        },
+                        {
+                            name: 'main',
+                            exclude: ['config']
+                        }
+                    ]
                 }
             }
         },
@@ -207,7 +223,7 @@ module.exports = function(grunt) {
 	// =======================================
 	grunt.registerTask('default', ['sass', 'jade', 'connect', 'watch']);
 	grunt.registerTask('fontcustom', ['shell:fontcustom', 'copy:fontcustom', 'replace:fontcustom']);
-    grunt.registerTask('release', ['jshint', 'csslint', 'clean', 'replace:release', 'copy:release', 'cssmin', 'imagemin', 'requirejs']);
+    grunt.registerTask('release', ['jshint', 'csslint', 'clean:release', 'replace:release', 'copy:release', 'cssmin', 'imagemin', 'requirejs', 'clean:cleanup']);
 
 	// Load grunt packages
 	// =======================================
