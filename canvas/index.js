@@ -7,11 +7,11 @@ var CanvasGenerator = module.exports = function CanvasGenerator(args, options, c
   // as `this.name`.
   yeoman.generators.NamedBase.apply(this, arguments);
 
-  console.log('You called the canvas subgenerator with the argument ' + this.name + '.');
+  console.log("Creating canvas module at scripts/vendor/lib/canvas.js")
 };
 
 util.inherits(CanvasGenerator, yeoman.generators.NamedBase);
 
 CanvasGenerator.prototype.files = function files() {
-  this.copy('somefile.js', 'somefile.js');
+  this.copy('canvas.js', 'scripts/vendor/lib/canvas.js');
 };
