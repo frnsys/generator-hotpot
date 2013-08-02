@@ -119,7 +119,20 @@ module.exports = function(grunt) {
 					from: 'fontcustom',
 					to: 'icons'
 				}]
-			}
+			},
+
+            // Replace for release.
+            release: {
+                src: ['index.html'],
+                dest: ['release/index.html'],
+                replacements: [{
+                    from: '/scripts/vendor/bower/requirejs/require.js',
+                    to: '/scripts/release.js'
+                }, {
+                    from: ' data-main="/scripts/main"',
+                    to: ''
+                }]
+            }
 		},
 
 
