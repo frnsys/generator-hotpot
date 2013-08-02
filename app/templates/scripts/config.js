@@ -1,11 +1,14 @@
 requirejs.config({
-    baseUrl: 'scripts/vendor',
+    baseUrl: 'scripts',
     paths: {
         jquery: 'vendor/bower/jquery/jquery',
         modernizr: 'vendor/bower/modernizr/modernizr',
         requirejs: 'vendor/bower/requirejs/require'
     },
     shim: {
+        modernizr: {
+            exports: 'Modernizr'
+        }
         // Example
         //backbone: {
             //deps: ['jquery', 'underscore'],
