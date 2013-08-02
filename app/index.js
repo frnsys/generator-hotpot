@@ -40,6 +40,7 @@ HotpotGenerator.prototype.app = function app() {
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
   this.copy('index.jade', 'index.jade');
+  this.copy('404.jade', '404.jade');
   this.copy('favicon.ico', 'favicon.ico');
 
   this.directory('includes', 'includes');
@@ -54,6 +55,21 @@ HotpotGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('csslintrc', '.csslintrc');
   this.copy('jshintrc', '.jshintrc');
   this.copy('Gruntfile.js', 'Gruntfile.js');
+};
+
+HotpotGenerator.prototype.h5bp = function h5bp() {
+  var cb = this.async();
+
+  this.remote('h5bp', 'html5-boilerplate', function(err, remote) {
+      if (err) {
+          return cb(err);
+      }
+      remote.copy('.htaccess', '.htaccess');
+      remote.copy('crossdomain.xml', 'crossdomain.xml');
+      remote.copy('humans.txt', 'humans.txt');
+      remote.copy('robots.txt', 'robots.txt');
+      cb();
+  });
 };
 
 HotpotGenerator.prototype.stylesheets = function stylesheets() {
