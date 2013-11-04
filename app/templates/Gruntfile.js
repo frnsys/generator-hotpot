@@ -18,16 +18,16 @@ module.exports = function(grunt) {
             // Setup a LiveReload server.
             options: { livereload: true },
             files: [
-                'scripts/vendor/libs/**/*',
-                'scripts/**/*.js',
-                'styles/**/*.scss',
-                'styles/**/*.sass',
+                'js/vendor/libs/**/*',
+                'js/**/*.js',
+                'css/**/*.scss',
+                'css/**/*.sass',
                 '**/*.jade',
-                'source/icons/*',
+                'src/icons/*',
                 'assets/**/*',
 
                 // Ignore:
-                '!styles/exts/_icons.scss'
+                '!css/exts/_icons.scss'
             ],
             tasks: ['sass', 'jade', 'fontcustom']
         },
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         sass: {
             app: {
                 files: {
-                    'styles/index.css': 'styles/index.sass' 
+                    'css/index.css': 'css/index.sass' 
                 }
             }
         },
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                     cwd: '.',
                     src: [
                         '**/*.jade',
-                        '!includes/**/*.jade',
+                        '!inc/**/*.jade',
                         '!node_modules/**/*.jade'
                     ],
                     dest: '.',
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 
         bower: {
             main: {
-                rjsConfig: 'scripts/config.js'
+                rjsConfig: 'js/config.js'
             }
         },
 
@@ -76,8 +76,8 @@ module.exports = function(grunt) {
                 jshintrc: '.jshintrc'
             },
             files: [
-                'scripts/**/*.js',
-                '!scripts/vendor/**/*.js'
+                'js/**/*.js',
+                '!js/vendor/**/*.js'
             ]
         },
 
@@ -86,24 +86,24 @@ module.exports = function(grunt) {
                 options: {
                     csslintrc: '.csslintrc'
                 },
-                src: ['styles/index.css']
+                src: ['css/index.css']
             }
         },
 
         shell: {
             // Compile Font Custom font.
             fontcustom: {
-                command: 'fontcustom compile source/icons'
+                command: 'fontcustom compile src/icons'
             }
         },
         copy: {
             // Copy Font Custom fonts to proper place.
             fontcustom: {
                 files: [
-                    {src: ['source/icons/fontcustom/*.woff'], dest: 'styles/fonts/icons.woff'},
-                    {src: ['source/icons/fontcustom/*.eot'],  dest: 'styles/fonts/icons.eot'},
-                    {src: ['source/icons/fontcustom/*.svg'],  dest: 'styles/fonts/icons.svg'},
-                    {src: ['source/icons/fontcustom/*.ttf'],  dest: 'styles/fonts/icons.ttf'}
+                    {src: ['src/icons/fontcustom/*.woff'], dest: 'css/fonts/icons.woff'},
+                    {src: ['src/icons/fontcustom/*.eot'],  dest: 'css/fonts/icons.eot'},
+                    {src: ['src/icons/fontcustom/*.svg'],  dest: 'css/fonts/icons.svg'},
+                    {src: ['src/icons/fontcustom/*.ttf'],  dest: 'css/fonts/icons.ttf'}
                 ]
             },
 
@@ -127,8 +127,8 @@ module.exports = function(grunt) {
         replace: {
             // Replace Font Custom CSS.
             fontcustom: {
-                src: ['source/icons/fontcustom/fontcustom.css'],
-                dest: ['styles/exts/_icons.scss'],
+                src: ['src/icons/fontcustom/fontcustom.css'],
+                dest: ['css/exts/_icons.scss'],
                 replacements: [{
                     from: /fontcustom_[^.]+/g,
                     to: 'fonts/icons'
@@ -143,10 +143,10 @@ module.exports = function(grunt) {
                 src: ['index.html'],
                 dest: ['release/index.html'],
                 replacements: [{
-                    from: '/scripts/vendor/bower/requirejs/require.js',
-                    to: 'scripts/main.js'
+                    from: '/js/vendor/bower/requirejs/require.js',
+                    to: 'js/main.js'
                 }, {
-                    from: ' data-main="/scripts/main"',
+                    from: ' data-main="/js/main"',
                     to: ''
                 }]
             }
@@ -159,7 +159,7 @@ module.exports = function(grunt) {
         // to remove old files.
         clean: {
             release: ['release/'],
-            cleanup: ['release/scripts/vendor']
+            cleanup: ['release/js/vendor']
         },
 
         // Optimize RequireJS scripts.
@@ -167,10 +167,10 @@ module.exports = function(grunt) {
             compile: {
                 options: {
                     almond: true,                       // Use Almond instead of RequireJS.
-                    appDir: 'scripts',
-                    mainConfigFile: 'scripts/config.js',
-                    dir: 'release/scripts',
-                    baseUrl: '../scripts',
+                    appDir: 'js',
+                    mainConfigFile: 'js/config.js',
+                    dir: 'release/js',
+                    baseUrl: '../js',
                     modules: [
                         {
                             // Module names are relative to baseUrl.
@@ -196,7 +196,7 @@ module.exports = function(grunt) {
             files: {
                 expand: true,
                 cwd: '.',
-                src: ['styles/index.css'],
+                src: ['css/index.css'],
                 dest: 'release/'
             }
         },

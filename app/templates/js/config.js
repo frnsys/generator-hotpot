@@ -1,5 +1,5 @@
 requirejs.config({
-    baseUrl: 'scripts',
+    baseUrl: 'js',
     paths: {
         jquery: 'vendor/bower/jquery/jquery',
         modernizr: 'vendor/bower/modernizr/modernizr',

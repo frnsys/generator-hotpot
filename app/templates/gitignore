@@ -5,4 +5,4 @@ node_modules/
 fontcustom
 index.css
 *.swp
-scripts/vendor/bower/**/*
+js/vendor/bower/**/*
