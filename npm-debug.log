@@ -1,0 +1,201 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.10.15/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@1.3.5
+3 info using node@v0.10.15
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/ftseng/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+12 verbose folder .
+13 info prepublish generator-hotpot@0.1.2
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/ftseng/.npm/1f1177db-tar.lock
+16 silly lockFile 05137fab-6249-0-19753653253428638-tmp-tgz tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+17 verbose lock tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz /Users/ftseng/.npm/05137fab-6249-0-19753653253428638-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 05137fab-6249-0-19753653253428638-tmp-tgz tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+21 silly lockFile 05137fab-6249-0-19753653253428638-tmp-tgz tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+22 verbose tar unpack /var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+23 silly lockFile 3bce3a37-6249-0-19753653253428638-package tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package
+24 verbose lock tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package /Users/ftseng/.npm/3bce3a37-6249-0-19753653253428638-package.lock
+25 silly lockFile 05137fab-6249-0-19753653253428638-tmp-tgz tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+26 verbose lock tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz /Users/ftseng/.npm/05137fab-6249-0-19753653253428638-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm extractEntry .npmignore
+30 silly gunzTarPerm extractEntry README.md
+31 silly gunzTarPerm extractEntry LICENSE
+32 silly gunzTarPerm extractEntry .travis.yml
+33 silly gunzTarPerm extractEntry .editorconfig
+34 silly gunzTarPerm extractEntry .gitattributes
+35 silly gunzTarPerm extractEntry app/index.js
+36 silly gunzTarPerm extractEntry app/templates/Gruntfile.js
+37 silly gunzTarPerm extractEntry app/templates/favicon.ico
+38 silly gunzTarPerm extractEntry app/templates/_bower.json
+39 silly gunzTarPerm extractEntry app/templates/_package.json
+40 silly gunzTarPerm extractEntry app/templates/assets/images/hullo.jpg
+41 silly gunzTarPerm extractEntry app/templates/bowerrc
+42 silly gunzTarPerm extractEntry app/templates/csslintrc
+43 silly gunzTarPerm extractEntry app/templates/404.jade
+44 silly gunzTarPerm extractEntry app/templates/gitignore
+45 silly gunzTarPerm extractEntry app/templates/includes/foot.jade
+46 silly gunzTarPerm extractEntry app/templates/includes/head.jade
+47 silly gunzTarPerm extractEntry app/templates/includes/nav.jade
+48 silly gunzTarPerm extractEntry app/templates/index.jade
+49 silly gunzTarPerm extractEntry app/templates/jshintrc
+50 silly gunzTarPerm extractEntry app/templates/scripts/config.js
+51 silly gunzTarPerm extractEntry app/templates/scripts/main.js
+52 silly gunzTarPerm extractEntry app/templates/source/icons/chat.svg
+53 silly gunzTarPerm extractEntry app/templates/source/icons/document.svg
+54 silly gunzTarPerm extractEntry app/templates/source/icons/edit.svg
+55 silly gunzTarPerm extractEntry app/templates/source/icons/mail.svg
+56 silly gunzTarPerm extractEntry app/templates/source/icons/map.svg
+57 silly gunzTarPerm extractEntry app/templates/source/icons/menu.svg
+58 silly gunzTarPerm extractEntry app/templates/source/icons/search.svg
+59 silly gunzTarPerm extractEntry app/templates/source/icons/view.svg
+60 silly gunzTarPerm extractEntry canvas/index.js
+61 silly gunzTarPerm extractEntry canvas/templates/canvas.js
+62 silly gunzTarPerm extractEntry .jshintrc
+63 silly gunzTarPerm extractEntry test/test-creation.js
+64 silly gunzTarPerm extractEntry test/test-load.js
+65 silly lockFile 3bce3a37-6249-0-19753653253428638-package tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package
+66 silly lockFile 3bce3a37-6249-0-19753653253428638-package tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package
+67 silly lockFile 05137fab-6249-0-19753653253428638-tmp-tgz tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+68 silly lockFile 05137fab-6249-0-19753653253428638-tmp-tgz tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/tmp.tgz
+69 verbose tar pack [ '/Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz',
+69 verbose tar pack   '/var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package' ]
+70 verbose tarball /Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+71 verbose folder /var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package
+72 silly lockFile 3bce3a37-6249-0-19753653253428638-package tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package
+73 verbose lock tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package /Users/ftseng/.npm/3bce3a37-6249-0-19753653253428638-package.lock
+74 silly lockFile 8096e05f-nerator-hotpot-0-1-2-package-tgz tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+75 verbose lock tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz /Users/ftseng/.npm/8096e05f-nerator-hotpot-0-1-2-package-tgz.lock
+76 silly lockFile 3bce3a37-6249-0-19753653253428638-package tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package
+77 silly lockFile 3bce3a37-6249-0-19753653253428638-package tar:///var/folders/5m/dyjd2_s57rbfd3gwwlc16mfcpjqt5m/T/npm-15484-y9Di7Eim/1383580616249-0.19753653253428638/package
+78 silly lockFile 8096e05f-nerator-hotpot-0-1-2-package-tgz tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+79 silly lockFile 8096e05f-nerator-hotpot-0-1-2-package-tgz tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+80 silly lockFile 6a17a4fa-m-generator-hotpot-0-1-2-package /Users/ftseng/.npm/generator-hotpot/0.1.2/package
+81 verbose lock /Users/ftseng/.npm/generator-hotpot/0.1.2/package /Users/ftseng/.npm/6a17a4fa-m-generator-hotpot-0-1-2-package.lock
+82 silly lockFile 6a17a4fa-m-generator-hotpot-0-1-2-package /Users/ftseng/.npm/generator-hotpot/0.1.2/package
+83 silly lockFile 6a17a4fa-m-generator-hotpot-0-1-2-package /Users/ftseng/.npm/generator-hotpot/0.1.2/package
+84 verbose tar unpack /Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+85 silly lockFile c5d4e39d-m-generator-hotpot-0-1-2-package tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package
+86 verbose lock tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package /Users/ftseng/.npm/c5d4e39d-m-generator-hotpot-0-1-2-package.lock
+87 silly lockFile 8096e05f-nerator-hotpot-0-1-2-package-tgz tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+88 verbose lock tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz /Users/ftseng/.npm/8096e05f-nerator-hotpot-0-1-2-package-tgz.lock
+89 silly gunzTarPerm modes [ '755', '644' ]
+90 silly gunzTarPerm extractEntry package.json
+91 silly gunzTarPerm extractEntry .npmignore
+92 silly gunzTarPerm extractEntry README.md
+93 silly gunzTarPerm extractEntry LICENSE
+94 silly gunzTarPerm extractEntry .travis.yml
+95 silly gunzTarPerm extractEntry .gitattributes
+96 silly gunzTarPerm extractEntry .jshintrc
+97 silly gunzTarPerm extractEntry app/index.js
+98 silly gunzTarPerm extractEntry app/templates/Gruntfile.js
+99 silly gunzTarPerm extractEntry app/templates/favicon.ico
+100 silly gunzTarPerm extractEntry app/templates/_bower.json
+101 silly gunzTarPerm extractEntry app/templates/_package.json
+102 silly gunzTarPerm extractEntry app/templates/assets/images/hullo.jpg
+103 silly gunzTarPerm extractEntry app/templates/bowerrc
+104 silly gunzTarPerm extractEntry app/templates/csslintrc
+105 silly gunzTarPerm extractEntry app/templates/404.jade
+106 silly gunzTarPerm extractEntry app/templates/gitignore
+107 silly gunzTarPerm extractEntry app/templates/includes/foot.jade
+108 silly gunzTarPerm extractEntry app/templates/includes/head.jade
+109 silly gunzTarPerm extractEntry app/templates/includes/nav.jade
+110 silly gunzTarPerm extractEntry app/templates/index.jade
+111 silly gunzTarPerm extractEntry app/templates/jshintrc
+112 silly gunzTarPerm extractEntry app/templates/scripts/config.js
+113 silly gunzTarPerm extractEntry app/templates/scripts/main.js
+114 silly gunzTarPerm extractEntry app/templates/source/icons/chat.svg
+115 silly gunzTarPerm extractEntry app/templates/source/icons/document.svg
+116 silly gunzTarPerm extractEntry app/templates/source/icons/edit.svg
+117 silly gunzTarPerm extractEntry app/templates/source/icons/mail.svg
+118 silly gunzTarPerm extractEntry app/templates/source/icons/map.svg
+119 silly gunzTarPerm extractEntry app/templates/source/icons/menu.svg
+120 silly gunzTarPerm extractEntry app/templates/source/icons/search.svg
+121 silly gunzTarPerm extractEntry app/templates/source/icons/view.svg
+122 silly gunzTarPerm extractEntry canvas/index.js
+123 silly gunzTarPerm extractEntry canvas/templates/canvas.js
+124 silly gunzTarPerm extractEntry .editorconfig
+125 silly gunzTarPerm extractEntry test/test-creation.js
+126 silly gunzTarPerm extractEntry test/test-load.js
+127 silly lockFile c5d4e39d-m-generator-hotpot-0-1-2-package tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package
+128 silly lockFile c5d4e39d-m-generator-hotpot-0-1-2-package tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package
+129 silly lockFile 8096e05f-nerator-hotpot-0-1-2-package-tgz tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+130 silly lockFile 8096e05f-nerator-hotpot-0-1-2-package-tgz tar:///Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz
+131 verbose chmod /Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz 644
+132 verbose chown /Users/ftseng/.npm/generator-hotpot/0.1.2/package.tgz [ 756803764, 841335654 ]
+133 silly lockFile 3a52ce78- .
+134 silly lockFile 3a52ce78- .
+135 silly publish { name: 'generator-hotpot',
+135 silly publish   version: '0.1.2',
+135 silly publish   description: 'A generator for Yeoman',
+135 silly publish   keywords: [ 'yeoman-generator' ],
+135 silly publish   homepage: 'https://github.com/ftzeng/generator-hotpot',
+135 silly publish   bugs: { url: 'https://github.com/ftzeng/generator-hotpot/issues' },
+135 silly publish   author:
+135 silly publish    { name: 'Francis Tseng',
+135 silly publish      email: 'ftzeng@gmail.com',
+135 silly publish      url: 'https://github.com/ftzeng' },
+135 silly publish   main: 'app/index.js',
+135 silly publish   repository:
+135 silly publish    { type: 'git',
+135 silly publish      url: 'git://github.com/ftzeng/generator-hotpot.git' },
+135 silly publish   scripts: { test: 'mocha' },
+135 silly publish   dependencies: { 'yeoman-generator': '*' },
+135 silly publish   devDependencies: { mocha: '~1.10.0' },
+135 silly publish   engines: { node: '>=0.8.0' },
+135 silly publish   licenses: [ { type: 'MIT' } ],
+135 silly publish   readme: '# Generator-hotpot\n\nA generator for Yeoman.\n\n## Getting started\n- Make sure you have [yo](https://github.com/yeoman/yo) installed:\n    `npm install -g yo`\n- Install the generator: `npm install -g generator-hotpot`\n- Run: `yo hotpot`\n- After it\'s generated, run `grunt` to start the local server (defaults to\n        port 8989)\n\n## About\nHotpot is a boilerplate for simple static sites that may have some\nadditional fanciness such as canvas or other interactive components.\n\nHTML markup is generated via [Jade](http://jade-lang.com/), CSS is\nhandled with [Sass](http://sass-lang.com/), and JS is helped with\n[RequireJS](http://requirejs.org/).\n\nJade provides some niceities such as includes and in general is less of\na hassle to deal with than HTML.\n\nIt uses [Grunt](http://gruntjs.com/) for automation, which handles a number of things.\n\nGrunt\'s default task, `grunt`, will start a local server on port 8989 in addition to a [LiveReload](http://livereload.com/)\nserver. It will watch the directories you will be working in for\nchanges, and accordingly compile Sass, Jade, and [Font\nCustom](http://fontcustom.com/) fonts.\n\nThe Gruntfile also specifies a release task, `grunt release`, which will\nperform JS and CSS linting, minify and concatenate JS and CSS, and\ncompress PNG and JPG images.\n\n[Bower](http://bower.io/) is used for package management. It doesn\'t\nintegrate that well with RequireJS, unfortunately, and I\'m considering\nswitching to [Jam](http://jamjs.org/) instead. For now, after you\ninstall new packages, you can run the grunt task `grunt bower` which\nwill attempt to appropriately update the RequireJS config file. It\ndoesn\'t always work, so if you\'re running into errors with new packages,\n    check those paths first.\n\n## License\nHotpot is by Francis Tseng ([@frnsys](https://twitter.com/frnsys))\n\n[MIT License](http://en.wikipedia.org/wiki/MIT_License)\n',
+135 silly publish   readmeFilename: 'README.md',
+135 silly publish   _id: 'generator-hotpot@0.1.2',
+135 silly publish   dist: { shasum: '516fd2686654ca331ed39afa605fed2f6d5073e9' },
+135 silly publish   _from: '.' }
+136 verbose url raw generator-hotpot
+137 verbose url resolving [ 'https://registry.npmjs.org/', './generator-hotpot' ]
+138 verbose url resolved https://registry.npmjs.org/generator-hotpot
+139 info trying registry request attempt 1 at 10:56:56
+140 http PUT https://registry.npmjs.org/generator-hotpot
+141 http 409 https://registry.npmjs.org/generator-hotpot
+142 verbose url raw generator-hotpot
+143 verbose url resolving [ 'https://registry.npmjs.org/', './generator-hotpot' ]
+144 verbose url resolved https://registry.npmjs.org/generator-hotpot
+145 info trying registry request attempt 1 at 10:56:57
+146 http GET https://registry.npmjs.org/generator-hotpot
+147 http 200 https://registry.npmjs.org/generator-hotpot
+148 error publish fail Cannot publish over existing version.
+148 error publish fail Update the 'version' field in package.json and try again.
+148 error publish fail
+148 error publish fail If the previous version was published in error, see:
+148 error publish fail     npm help unpublish
+148 error publish fail
+148 error publish fail To automatically increment version numbers, see:
+148 error publish fail     npm help version
+149 error System Darwin 13.0.0
+150 error command "/usr/local/Cellar/node/0.10.15/bin/node" "/usr/local/bin/npm" "publish"
+151 error cwd /Users/ftseng/Desktop/projects/yeoman/generator-hotpot
+152 error node -v v0.10.15
+153 error npm -v 1.3.5
+154 error code EPUBLISHCONFLICT
+155 verbose exit [ 1, true ]
