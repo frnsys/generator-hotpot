@@ -43,10 +43,10 @@ HotpotGenerator.prototype.app = function app() {
   this.copy('404.jade', '404.jade');
   this.copy('favicon.ico', 'favicon.ico');
 
-  this.directory('includes', 'includes');
+  this.directory('inc', 'inc');
   this.directory('assets', 'assets');
-  this.directory('source', 'source');
-  this.directory('scripts', 'scripts');
+  this.directory('src', 'src');
+  this.directory('js', 'js');
 };
 
 HotpotGenerator.prototype.projectfiles = function projectfiles() {
@@ -79,7 +79,7 @@ HotpotGenerator.prototype.stylesheets = function stylesheets() {
         if (err) {
             return cb(err);
         }
-        remote.directory('.', 'styles/');
+        remote.directory('.', 'css/');
         cb();
     });
 };
