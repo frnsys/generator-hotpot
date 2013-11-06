@@ -1,7 +1,7 @@
 requirejs.config({
     baseUrl: 'js',
     paths: {
-        jquery: 'vendor/bower/jquery/jquery',
+        jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
         modernizr: 'vendor/bower/modernizr/modernizr',
         requirejs: 'vendor/bower/requirejs/require'
     },
