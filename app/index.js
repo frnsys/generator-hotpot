@@ -60,7 +60,7 @@ HotpotGenerator.prototype.projectfiles = function projectfiles() {
 HotpotGenerator.prototype.h5bp = function h5bp() {
   var cb = this.async();
 
-  this.remote('h5bp', 'html5-boilerplate', function(err, remote) {
+  this.remote('h5bp', 'html5-boilerplate', 'master', function(err, remote) {
       if (err) {
           return cb(err);
       }
@@ -69,19 +69,19 @@ HotpotGenerator.prototype.h5bp = function h5bp() {
       remote.copy('humans.txt', 'humans.txt');
       remote.copy('robots.txt', 'robots.txt');
       cb();
-  });
+  }, true);
 };
 
 HotpotGenerator.prototype.stylesheets = function stylesheets() {
     var cb = this.async();
 
-    this.remote('ftzeng', 'atomic', function(err, remote) {
+    this.remote('ftzeng', 'atomic', 'master', function(err, remote) {
         if (err) {
             return cb(err);
         }
         remote.directory('.', 'css/');
         cb();
-    });
+    }, true);
 };
 
 var hotpot =
