@@ -64,10 +64,10 @@ HotpotGenerator.prototype.h5bp = function h5bp() {
       if (err) {
           return cb(err);
       }
-      remote.copy('.htaccess', '.htaccess');
-      remote.copy('crossdomain.xml', 'crossdomain.xml');
-      remote.copy('humans.txt', 'humans.txt');
-      remote.copy('robots.txt', 'robots.txt');
+      remote.copy('dist/.htaccess', '.htaccess');
+      remote.copy('dist/crossdomain.xml', 'crossdomain.xml');
+      remote.copy('dist/humans.txt', 'humans.txt');
+      remote.copy('dist/robots.txt', 'robots.txt');
       cb();
   }, true);
 };
